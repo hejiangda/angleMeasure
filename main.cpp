@@ -6,8 +6,8 @@
 #include <Driver/RMVideoCapture.hpp>
 using namespace cv;
 using namespace std;
-RNG g_rng(12345);//毛大大的博客里看到的生成随机数，用于生成随机颜色
-bool drawRect = false;//不可避免地还是要定义几个全局变量，伤心
+RNG g_rng(12345);//生成随机数，用于生成随机颜色
+bool drawRect = false;
 Point LeftPnt=Point(-1,-1);
 Point mousePos= Point(-1, -1);
 Mat cameraMatrix;
@@ -83,7 +83,7 @@ int main(int argc, char *argv[])
     cap.open(0);
     cap.setVideoFormat(1920,1080);
 
-    FileStorage fs("/home/happy/AutoGameCV/posEstimate/out_camera_data.xml", FileStorage::READ);
+    FileStorage fs("./out_camera_data.xml", FileStorage::READ);
     fs["camera_matrix"] >> cameraMatrix;
     fs["distortion_coefficients"] >> distCoeffs;
     cap.startStream();
