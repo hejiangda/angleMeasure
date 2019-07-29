@@ -1,5 +1,3 @@
-#include "mainwindow.h"
-#include <QApplication>
 #include <opencv2/opencv.hpp>
 #include <iostream>
 #include<string>
@@ -12,7 +10,7 @@ Point LeftPnt=Point(-1,-1);
 Point mousePos= Point(-1, -1);
 Mat cameraMatrix;
 Mat distCoeffs;
-int flag=0;
+//int flag=0;
 void calAngle(Mat cam,Mat dis,int x,int y)
 {
 
@@ -47,7 +45,7 @@ void calAngle(Mat cam,Mat dis,int x,int y)
 void on_mouse(int event, int x, int y, int flags, void *ustc)
 //event鼠标事件代号，x,y鼠标坐标，flags拖拽和键盘操作的代号
 {
-    flag=1;
+//    flag=1;
     Mat& image = *(cv::Mat*) ustc;//这样就可以传递Mat信息了，很机智
     char temp[16];
     switch (event) {
